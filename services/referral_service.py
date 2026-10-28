@@ -16,11 +16,20 @@ def build_referral_link(telegram_id: int) -> str:
 
 def build_share_url(referral_link: str) -> str:
     share_text = (
-        "🎓 Want free access to the full SAT Course?\n\n"
-        "I'm unlocking mine through this bot — you can get yours too.\n\n"
-        "Just join through my link and help me unlock it 👇\n\n"
-        f"{referral_link}\n\n"
-        "It takes less than a minute."
+        "DTM topshirib, har yili grant uchun asab buzishdan charchadingizmi?\n\n"
+        "Ko'pchilik bilmaydigan haqiqat: DTM orqali kirsangiz, davlat granti atigi 1 yilga beriladi — har yili GPA deb yugurasiz.\n\n"
+        "Bitta SAT bilan esa:\n\n"
+        "• O'zbekistondagi nufuzli universitetlarda (JIDU, TDIU) 4 yillik kafolatlangan grant yutasiz.\n"
+        "• Xorijda esa $300,000+ lik Full-ride (kontrakt + yotoqxona + stipendiya) olish mumkin.\n\n"
+        "🎁 SAT'ni 0 dan boshlayotganlar uchun to'liq bepul video kurs va materiallar ochildi.\n\n"
+        "🎁 Sovg'alar (eng ko'p do'st chaqirganlarga):\n\n"
+        "🥇 1-o'rin: 500,000 so'm\n"
+        "🥈 2-o'rin: 300,000 so'm\n"
+        "🥉 3-o'rin: 100,000 so'm\n\n"
+        "Kursni olish va 500,000 so'mgacha naqd pul yutish uchun botga kiring:\n\n"
+        f"👉 {referral_link}\n"
+        f"👉 {referral_link}\n"
+        f"👉 {referral_link}"
     )
     return (
         "https://t.me/share/url?"
