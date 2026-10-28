@@ -134,6 +134,18 @@ T: dict[str, dict[str, str]] = {
         "btn_join_ch":    "📋 Kanallarga a'zo bo'lish",
         "btn_lang_uz":    "🇺🇿 O'zbekcha",
         "btn_lang_en":    "🇬🇧 English",
+        "btn_leaderboard": "🏆 Reyting",
+
+        # ── Leaderboard ────────────────────────────────────────────────────
+        "leaderboard_title": "🏆 <b>Eng ko'p do'st chaqirganlar</b>",
+        "leaderboard_prizes": (
+            "🥇 1-o'rin: <b>500,000 so'm</b>\n"
+            "🥈 2-o'rin: <b>300,000 so'm</b>\n"
+            "🥉 3-o'rin: <b>100,000 so'm</b>"
+        ),
+        "leaderboard_your_rank": "📍 <b>Sizning o'rningiz:</b> #{rank} — {count} ta taklif",
+        "leaderboard_empty": "Hali hech kim taklif qilmagan. Birinchi bo'ling! 🚀",
+        "leaderboard_row": "{medal} {name} — <b>{count} ta</b>",
     },
 
     "en": {
@@ -263,6 +275,18 @@ T: dict[str, dict[str, str]] = {
         "btn_join_ch":    "📋 Join Required Channels",
         "btn_lang_uz":    "🇺🇿 O'zbekcha",
         "btn_lang_en":    "🇬🇧 English",
+        "btn_leaderboard": "🏆 Leaderboard",
+
+        # ── Leaderboard ────────────────────────────────────────────────────
+        "leaderboard_title": "🏆 <b>Top Referrers</b>",
+        "leaderboard_prizes": (
+            "🥇 1st place: <b>500,000 so'm</b>\n"
+            "🥈 2nd place: <b>300,000 so'm</b>\n"
+            "🥉 3rd place: <b>100,000 so'm</b>"
+        ),
+        "leaderboard_your_rank": "📍 <b>Your rank:</b> #{rank} — {count} referral(s)",
+        "leaderboard_empty": "No referrals yet. Be the first! 🚀",
+        "leaderboard_row": "{medal} {name} — <b>{count}</b>",
     },
 }
 

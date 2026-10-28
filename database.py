@@ -376,22 +376,3 @@ async def save_reward_file(
     await set_setting("predictions_file_size", str(file_size))
     await set_setting("predictions_uploaded_at", uploaded_at)
     await set_setting("predictions_active", "1")
-
-    rank, count = await get_user_rank(telegram_id)
-    if rank <= 1:
-        return 0
-    async with aiosqlite.connect(DATABASE_PATH) as db:
-        async with db.execute(
-            """
-            SELECT MIN(referral_count) FROM users
-            WHERE referral_count > ?
-            """,
-            (count,)
-        ) as cursor:
-            row = await cursor.fetchone()
-            next_count = row[0] if row and row[0] is not None else None
-            if next_count is None:
-                return 1
-            return max(1, (next_count - count) + 1)
-
-

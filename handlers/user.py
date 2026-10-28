@@ -8,6 +8,7 @@ from keyboards import channels_keyboard, dashboard_keyboard, status_keyboard, un
 from services import file_service
 from services.channel_checker import get_channel_membership_status
 from services.referral_service import build_referral_link
+from translations import T, get_lang
 
 router = Router()
 
