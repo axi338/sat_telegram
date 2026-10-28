@@ -15,27 +15,28 @@ T: dict[str, dict[str, str]] = {
 
         # ── Welcome ────────────────────────────────────────────────────────
         "welcome": (
-            "<b>SAT ni 0 dan o'rganish — To'liq Kurs 🎓</b>\n\n"
-            "Salom! Bu bot orqali siz <b>SAT ni noldan o'rganishga "
-            "mo'ljallangan to'liq kursga</b> kirish huquqini olishingiz mumkin.\n\n"
-            "Kursda nima bor?\n"
-            "📖 Reading, Writing va Math bo'limlari\n"
-            "🎯 Boshlang'ichdan yuqori darajagacha tushuntirishlar\n"
-            "📝 Mashqlar, testlar va tahlillar\n\n"
-            "<b>Kursga kirish — bepul. Faqat 3 ta do'stingizni taklif qiling.</b>\n\n"
-            "<b>Qanday ishlaydi:</b>\n\n"
+            "DTM topshirib, har yili grant uchun asab buzishdan charchadingizmi?\n\n"
+            "Ko'pchilik bilmaydigan haqiqat: DTM orqali kirsangiz, davlat granti atigi 1 yilga beriladi — har yili GPA deb yugurasiz.\n\n"
+            "Bitta SAT bilan esa:\n\n"
+            "• O'zbekistondagi nufuzli universitetlarda (JIDU, TDIU) 4 yillik kafolatlangan grant yutasiz.\n"
+            "• Xorijda esa $300,000+ lik Full-ride (kontrakt + yotoqxona + stipendiya) olish mumkin.\n\n"
+            "🎁 <b>SAT'ni 0 dan boshlayotganlar uchun to'liq bepul video kurs va materiallar ochildi.</b>\n\n"
+            "🎁 <b>Sovg'alar (eng ko'p do'st chaqirganlarga):</b>\n\n"
+            "🥇 1-o'rin: 500,000 so'm\n"
+            "🥈 2-o'rin: 300,000 so'm\n"
+            "🥉 3-o'rin: 100,000 so'm\n\n"
+            "<b>Kursni olish uchun:</b>\n\n"
             "1️⃣ Quyidagi 4 ta kanalga a'zo bo'ling\n"
             "2️⃣ O'z shaxsiy havola orqali 3 do'stingizni taklif qiling\n"
-            "3️⃣ Do'stlaringiz a'zo bo'lgach, "
-            "<b>kursga kirish havolasi avtomatik yuboriladi 🎉</b>\n\n"
+            "3️⃣ Do'stlaringiz kanalga qo'shilgach, <b>kursga kirish havolasi avtomatik yuboriladi 🎉</b>\n\n"
             "Boshlash uchun pastdagi tugmani bosing 👇"
         ),
         "referred_welcome": (
             "👋 <b>Siz do'stingiz taklifi orqali keldingiz!</b>\n\n"
-            "Siz ham <b>SAT ni 0 dan o'rganishga to'liq kursga</b> "
-            "bepul kirish huquqini olishingiz mumkin.\n\n"
+            "Siz ham <b>SAT to'liq bepul kursga</b> kirish huquqini olishingiz mumkin — "
+            "va 500,000 so'mgacha sovg'a yutish imkoniyatingiz bor!\n\n"
             "Buning uchun avval quyidagi 4 ta kanalga a'zo bo'ling — "
-            "a'zoligingiz tasdiqlanса, do'stingiz ham kredit oladi. ✅"
+            "a'zoligingiz tasdiqlangach, do'stingiz ham kredit oladi. ✅"
         ),
 
         # ── Dashboard ──────────────────────────────────────────────────────
