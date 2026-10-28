@@ -64,6 +64,7 @@ async def set_bot_commands(bot: Bot) -> None:
         BotCommand(command="start", description="Start the bot"),
         BotCommand(command="progress", description="Check your progress"),
         BotCommand(command="link", description="Get your invite link"),
+        BotCommand(command="leaderboard", description="Top referrers ranking"),
         BotCommand(command="admin", description="Admin panel"),
         BotCommand(command="data", description="Show user data (admin)"),
     ]

@@ -36,6 +36,7 @@ def dashboard_keyboard(user_id: int, lang: str = "uz") -> InlineKeyboardMarkup:
         [InlineKeyboardButton(text=T[lang]["btn_invite"],   url=share_url)],
         [InlineKeyboardButton(text=T[lang]["btn_progress"], callback_data="check_progress")],
         [InlineKeyboardButton(text=T[lang]["btn_channels"], callback_data="required_channels")],
+        [InlineKeyboardButton(text=T[lang]["btn_leaderboard"], callback_data="show_leaderboard")],
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
@@ -47,6 +48,7 @@ def status_keyboard(user_id: int, lang: str = "uz") -> InlineKeyboardMarkup:
             [InlineKeyboardButton(text=T[lang]["btn_more"],    url=share_url)],
             [InlineKeyboardButton(text=T[lang]["btn_refresh"], callback_data="refresh_status")],
             [InlineKeyboardButton(text=T[lang]["btn_channels"],callback_data="required_channels")],
+            [InlineKeyboardButton(text=T[lang]["btn_leaderboard"], callback_data="show_leaderboard")],
         ]
     )
 

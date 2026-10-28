@@ -219,6 +219,42 @@ async def cb_get_reward(callback: CallbackQuery, bot: Bot) -> None:
     await file_service.deliver_reward(bot, user_id)
 
 
+@router.callback_query(F.data == "show_leaderboard")
+async def cb_show_leaderboard(callback: CallbackQuery) -> None:
+    await callback.answer()
+    if not callback.from_user:
+        return
+
+    user_id = callback.from_user.id
+    user = await db.get_user(user_id)
+    lang = _lang(user)
+
+    from translations import T
+
+    top = await db.get_top_referrers(limit=10)
+    rank, my_count = await db.get_user_rank(user_id)
+
+    if not top or all(r.get("referral_count", 0) == 0 for r in top):
+        await callback.message.answer(T[lang]["leaderboard_empty"])
+        return
+
+    medals = ["🥇", "🥈", "🥉"] + ["  {}".format(i) for i in range(4, 11)]
+    lines = [T[lang]["leaderboard_title"], "", T[lang]["leaderboard_prizes"], ""]
+
+    for i, r in enumerate(top):
+        count = r.get("referral_count", 0)
+        if count == 0:
+            break
+        name = r.get("full_name") or r.get("username") or "—"
+        medal = medals[i] if i < len(medals) else f"  {i+1}"
+        lines.append(T[lang]["leaderboard_row"].format(medal=medal, name=name, count=count))
+
+    lines.append("")
+    lines.append(T[lang]["leaderboard_your_rank"].format(rank=rank, count=my_count))
+
+    await callback.message.answer("\n".join(lines))
+
+
 # ── Admin callbacks ──────────────────────────────────────────────────────────
 
 

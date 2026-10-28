@@ -85,3 +85,38 @@ async def cmd_link(message: Message, bot: Bot) -> None:
         link_preview_options=LinkPreviewOptions(is_disabled=True),
     )
 
+
+@router.message(Command("leaderboard"))
+async def cmd_leaderboard(message: Message) -> None:
+    user = message.from_user
+    if not user:
+        return
+
+    db_user = await db.get_user(user.id)
+    if not db_user:
+        await message.answer("Please send /start first.")
+        return
+
+    lang = get_lang(db_user)
+    top = await db.get_top_referrers(limit=10)
+    rank, my_count = await db.get_user_rank(user.id)
+
+    if not top or all(r.get("referral_count", 0) == 0 for r in top):
+        await message.answer(T[lang]["leaderboard_empty"])
+        return
+
+    medals = ["🥇", "🥈", "🥉"] + ["  {}".format(i) for i in range(4, 11)]
+    lines = [T[lang]["leaderboard_title"], "", T[lang]["leaderboard_prizes"], ""]
+
+    for i, r in enumerate(top):
+        count = r.get("referral_count", 0)
+        if count == 0:
+            break
+        name = r.get("full_name") or r.get("username") or "—"
+        medal = medals[i] if i < len(medals) else f"  {i+1}"
+        lines.append(T[lang]["leaderboard_row"].format(medal=medal, name=name, count=count))
+
+    lines.append("")
+    lines.append(T[lang]["leaderboard_your_rank"].format(rank=rank, count=my_count))
+
+    await message.answer("\n".join(lines))
